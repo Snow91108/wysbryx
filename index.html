@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      color: #333;
+      text-align: center;
+      padding: 20px;
+    }
+    .dark-mode {
+      background: #111;
+      color: #f0f0f0;
+    }
+    .profile {
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 12px;
+      background: white;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    }
+    .profile img {
+      width: 120px;
+      border-radius: 50%;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 6px;
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile">
+    <img src="https://via.placeholder.com/120" alt="Profile Photo">
+    <h1>Sachin RV</h1>
+    <p>Aspiring Full Stack Developer 🚀</p>
+    <h3>Skills:</h3>
+    <ul>
+      <li>HTML, CSS, JavaScript</li>
+      <li>React Basics</li>
+      <li>Node.js, MongoDB</li>
+    </ul>
+    <a href="https://github.com/" target="_blank">My GitHub</a><br>
+    <a href="https://linkedin.com/" target="_blank">My LinkedIn</a>
+    <br>
+    <button id="toggleBtn">Toggle Dark/Light</button>
+  </div>
+
+  <script>
+    const btn = document.getElementById("toggleBtn");
+    btn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+    });
+  </script>
+</body>
+</html>
