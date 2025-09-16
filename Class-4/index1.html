@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sum Calculator (Local with Debounce & Button)</title>
+  <script>
+    let timeoutId;
+
+    function debouncePopulateDiv() {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(populateDiv, 1000);
+    }
+
+    function populateDiv() {
+      const a = document.getElementById("firstNum").value.trim();
+      const b = document.getElementById("secondNum").value.trim();
+      const resultDiv = document.getElementById("finalSum");
+
+      if (a === "" || b === "") {
+        resultDiv.innerText = "Please enter both numbers.";
+        return;
+      }
+
+      const numA = parseFloat(a);
+      const numB = parseFloat(b);
+
+      if (isNaN(numA) || isNaN(numB)) {
+        resultDiv.innerText = "Please enter valid numbers.";
+        return;
+      }
+
+      const sum = numA + numB;
+      resultDiv.innerText = "Sum: " + sum;
+    }
+  </script>
+</head>
+<body>
+  <h2>Sum Calculator</h2>
+
+  <input id="firstNum" type="text" placeholder="First Number" oninput="debouncePopulateDiv()"/><br><br>
+
+  <input id="secondNum" type="text" placeholder="Second Number" oninput="debouncePopulateDiv()"/><br><br>
+
+  <button onclick="populateDiv()">Calculate sum</button><br><br>
+
+  <div id="finalSum" style="font-weight: bold;"></div>
+
+
+</body>
+</html>
