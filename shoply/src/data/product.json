@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "Classic T-Shirt",
+    "price": 199,
+    "category": "clothing",
+    "image": "/images/tshirt.jpg",
+    "description": "Soft t-shirt. Comfortable for everyday wear."
+  },
+  {
+    "id": 2,
+    "name": "Running Shoes",
+    "price": 999,
+    "category": "footwear",
+    "image": "/images/shoes.jpg",
+    "description": "Lightweight shoes designed for running and gym workouts."
+  },
+  {
+    "id": 3,
+    "name": "Leather Wallet",
+    "price": 299,
+    "category": "accessories",
+    "image": "/images/wallet.jpg",
+    "description": "Slim leather wallet with multiple card slots."
+  },
+  {
+    "id": 4,
+    "name": "Bluetooth Earbuds",
+    "price": 899,
+    "category": "electronics",
+    "image": "/images/earbuds.jpg",
+    "description": "Wireless earbuds with noise cancellation and long battery life."
+  }
+]
