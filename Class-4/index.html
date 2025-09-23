@@ -15,7 +15,7 @@
             const a = document.getElementById("firstNum").value;
             const b = document.getElementById("secondNum").value;
 
-            fetch("https://sum-server.100xdevs.com/sum?a=" + a + "&b=" + b)
+            fetch("https://jsonplaceholder.typicode.com/posts/1")
                 .then(function(response) {
                     response.text()
                         .then(function(ans) {
