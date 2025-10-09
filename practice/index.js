@@ -1,23 +1,40 @@
-const products=[
-    {id:1, title:"updatedProduct1", price:25},
-    {id:2, title:"updatedProduct2", price:30},
-    {id:3, title:"updatedProduct3", price:90},
-];
+const API_URL= 'https://fakestoreapi.com/products';
 
-async function productsToUpdate() {
-    for(let i=0; i< products.length; i++){
-        const product=  products[i];
+//get
 
-        const response = await fetch(`https://fakestoreapi.com/products/${product.id}`,{
-            method: "PUT",
-            headers:{'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                title:product.title,
-                price:product.price
-            }),
-        });
-        const data =await response.json();
-        console.log(`Product ${product.id} updated:`,data);
+async function getProduct() {
+    try{
+        const response= await fetch(API_URL);
+        const data= await response.json();
+        console.log("all products:",data)
+    }catch(error){
+        console.error("error fetching data:", error);
     }
 }
-productsToUpdate();
+
+//post
+
+async function addProduct() {
+    try {
+        const newProduct={
+            title: "pen",
+            price: 10,
+            description:"blue ball pen",
+            category:"stationary"
+        };
+
+        const response= await fetch(API_URL,{
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body: JSON.stringify(newProduct)
+        });
+
+        const data= await response.json();
+        console.log("new product :",data);
+        return data.id;
+    } catch (error) {
+      console.log("error in adding data:", error)  
+    }
+ }
+// getProduct();
+addProduct()
